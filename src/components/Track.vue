@@ -47,7 +47,7 @@ export default {
     },
     emits: ['update:args'],
     computed: {
-        name() {
+        event() {
             return this.args[0];
         },
         properties() {
