@@ -21,7 +21,7 @@ export default {
             code: 'track',
             /* wwEditor:start */
             edit: () => import('./src/components/Track.vue'),
-            getIsValid([event]) {
+            getIsValid({ event }) {
                 return !!event;
             },
             /* wwEditor:end */
@@ -45,7 +45,7 @@ export default {
             code: 'group',
             /* wwEditor:start */
             edit: () => import('./src/components/Group.vue'),
-            getIsValid([groupId]) {
+            getIsValid({ groupId }) {
                 return !!groupId;
             },
             /* wwEditor:end */
@@ -55,7 +55,7 @@ export default {
             code: 'alias',
             /* wwEditor:start */
             edit: () => import('./src/components/Alias.vue'),
-            getIsValid([previousId]) {
+            getIsValid({ previousId }) {
                 return !!previousId;
             },
             /* wwEditor:end */
