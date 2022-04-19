@@ -43,7 +43,7 @@
 export default {
     props: {
         plugin: { type: Object, required: true },
-        args: { type: Object, default: () => ({ event: null, properties: [] }) },
+        args: { type: Object, required: true },
     },
     emits: ['update:args'],
     computed: {
