@@ -43,23 +43,23 @@
 export default {
     props: {
         plugin: { type: Object, required: true },
-        args: { type: Array, default: () => [null, []] },
+        args: { type: Object, default: () => ({ event: null, properties: [] }) },
     },
     emits: ['update:args'],
     computed: {
         event() {
-            return this.args[0];
+            return this.args.event;
         },
         properties() {
-            return this.args[1] || [];
+            return this.args.properties || [];
         },
     },
     methods: {
         setEvent(event) {
-            this.$emit('update:args', [event, this.properties]);
+            this.$emit('update:args', { ...this.args, event });
         },
         setProperties(properties) {
-            this.$emit('update:args', [this.event, properties]);
+            this.$emit('update:args', { ...this.args, properties });
         },
     },
 };
