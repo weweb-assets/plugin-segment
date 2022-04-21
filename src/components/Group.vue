@@ -43,23 +43,23 @@
 export default {
     props: {
         plugin: { type: Object, required: true },
-        args: { type: Array, default: () => [null, []] },
+        args: { type: Object, required: true },
     },
     emits: ['update:args'],
     computed: {
         groupId() {
-            return this.args[0];
+            return this.args.groupId;
         },
         traits() {
-            return this.args[1] || [];
+            return this.args.traits || [];
         },
     },
     methods: {
         setGroupId(groupId) {
-            this.$emit('update:args', [groupId, this.traits]);
+            this.$emit('update:args', { ...this.args, groupId });
         },
         setTraits(traits) {
-            this.$emit('update:args', [this.groupId, traits]);
+            this.$emit('update:args', { ...this.args, traits });
         },
     },
 };

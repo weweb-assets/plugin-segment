@@ -8,14 +8,10 @@ export default {
             },
         },
     },
-    functions: [
+    actions: [
         {
             name: 'Identify',
             code: 'identify',
-            parameters: [
-                { name: 'userId', type: 'string', optional: true },
-                { name: 'traits', type: 'array', optional: true },
-            ],
             /* wwEditor:start */
             edit: () => import('./src/components/Identify.vue'),
             /* wwEditor:end */
@@ -23,13 +19,9 @@ export default {
         {
             name: 'Track',
             code: 'track',
-            parameters: [
-                { name: 'event', type: 'string' },
-                { name: 'properties', type: 'array', optional: true },
-            ],
             /* wwEditor:start */
             edit: () => import('./src/components/Track.vue'),
-            getIsValid([event]) {
+            getIsValid({ event }) {
                 return !!event;
             },
             /* wwEditor:end */
@@ -37,11 +29,6 @@ export default {
         {
             name: 'Page',
             code: 'page',
-            parameters: [
-                { name: 'category', type: 'string', optional: true },
-                { name: 'name', type: 'string', optional: true },
-                { name: 'properties', type: 'array', optional: true },
-            ],
             /* wwEditor:start */
             edit: () => import('./src/components/Page.vue'),
             /* wwEditor:end */
@@ -49,10 +36,6 @@ export default {
         {
             name: 'Screen',
             code: 'screen',
-            parameters: [
-                { name: 'name', type: 'string', optional: true },
-                { name: 'properties', type: 'array', optional: true },
-            ],
             /* wwEditor:start */
             edit: () => import('./src/components/Screen.vue'),
             /* wwEditor:end */
@@ -60,13 +43,9 @@ export default {
         {
             name: 'Group',
             code: 'group',
-            parameters: [
-                { name: 'groupId', type: 'string' },
-                { name: 'traits', type: 'array', optional: true },
-            ],
             /* wwEditor:start */
             edit: () => import('./src/components/Group.vue'),
-            getIsValid([groupId]) {
+            getIsValid({ groupId }) {
                 return !!groupId;
             },
             /* wwEditor:end */
@@ -74,13 +53,9 @@ export default {
         {
             name: 'Alias',
             code: 'alias',
-            parameters: [
-                { name: 'previousId', type: 'string' },
-                { name: 'userId', type: 'string', optional: true },
-            ],
             /* wwEditor:start */
             edit: () => import('./src/components/Alias.vue'),
-            getIsValid([previousId]) {
+            getIsValid({ previousId }) {
                 return !!previousId;
             },
             /* wwEditor:end */

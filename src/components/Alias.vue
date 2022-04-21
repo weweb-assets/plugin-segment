@@ -22,23 +22,23 @@
 export default {
     props: {
         plugin: { type: Object, required: true },
-        args: { type: Array, default: () => [null, null] },
+        args: { type: Object, required: true },
     },
     emits: ['update:args'],
     computed: {
         previousId() {
-            return this.args[0];
+            return this.args.previousId;
         },
         userId() {
-            return this.args[1];
+            return this.args.userId;
         },
     },
     methods: {
         setPreviousId(previousId) {
-            this.$emit('update:args', [previousId, this.userId]);
+            this.$emit('update:args', { ...this.args, previousId });
         },
         setUserId(userId) {
-            this.$emit('update:args', [this.previousId, userId]);
+            this.$emit('update:args', { ...this.args, userId });
         },
     },
 };
