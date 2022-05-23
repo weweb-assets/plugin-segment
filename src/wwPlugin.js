@@ -13,7 +13,7 @@ import './components/Alias.vue';
 export default {
     analytics: null,
     async onLoad() {
-        const [analytics] = await AnalyticsBrowser.load({ writeKey: this.settings.publicData.apiKey });
+        const [analytics] = await AnalyticsBrowser.load({ writeKey: this.settings.publicData.writeKey });
         this.analytics = analytics;
     },
     /*=============================================m_ÔÔ_m=============================================\

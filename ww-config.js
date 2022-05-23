@@ -4,7 +4,7 @@ export default {
             edit: () => import('./src/components/SettingsEdit.vue'),
             summary: () => import('./src/components/SettingsSummary.vue'),
             getIsValid(settings) {
-                return !!settings.publicData.apiKey;
+                return !!settings.publicData.writeKey;
             },
         },
     },

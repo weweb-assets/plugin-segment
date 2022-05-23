@@ -1,7 +1,7 @@
 <template>
     <div class="segment-settings-summary">
         <wwEditorIcon large name="key" class="segment-settings-summary__icon" />
-        <span class="caption-m">{{ apiKey }}</span>
+        <span class="caption-m">{{ writeKey }}</span>
     </div>
 </template>
 
@@ -11,8 +11,8 @@ export default {
         settings: { type: Object, required: true },
     },
     computed: {
-        apiKey() {
-            return this.settings.publicData.apiKey || '';
+        writeKey() {
+            return this.settings.publicData.writeKey || '';
         },
     },
 };

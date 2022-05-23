@@ -1,6 +1,6 @@
 <template>
     <div class="segment-settings-edit">
-        <wwEditorFormRow required label="API key">
+        <wwEditorFormRow required label="Write key">
             <template #append-label>
                 <a
                     class="segment-settings-edit__link"
@@ -14,9 +14,9 @@
                 type="text"
                 name="api-key"
                 placeholder="Enter the API key"
-                :model-value="settings.publicData.apiKey"
+                :model-value="settings.publicData.writeKey"
                 large
-                @update:modelValue="changeApiKey"
+                @update:modelValue="changeWriteKey"
             />
         </wwEditorFormRow>
     </div>
@@ -29,8 +29,8 @@ export default {
     },
     emits: ['update:settings'],
     methods: {
-        changeApiKey(apiKey) {
-            this.$emit('update:settings', { ...this.settings, publicData: { apiKey } });
+        changeWriteKey(writeKey) {
+            this.$emit('update:settings', { ...this.settings, publicData: { writeKey } });
         },
     },
 };

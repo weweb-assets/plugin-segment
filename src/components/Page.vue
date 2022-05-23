@@ -1,7 +1,6 @@
 <template>
     <wwEditorInputRow
         label="Category"
-        required
         type="query"
         :model-value="category"
         placeholder="Enter a value"
@@ -10,7 +9,6 @@
     />
     <wwEditorInputRow
         label="Name"
-        required
         type="query"
         :model-value="name"
         placeholder="Enter a name"
