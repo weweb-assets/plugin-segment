@@ -1,1 +1,3 @@
 # How to configure the Segment plugin
+
+coming soon...
