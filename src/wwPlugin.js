@@ -13,7 +13,7 @@ import './components/Alias.vue';
 export default {
     analytics: null,
     onLoad(settings) {
-        this.loadAnalytics(settings.publicData.writeKey);
+        this.analytics = AnalyticsBrowser.load({ writeKey: settings.publicData.writeKey });
     },
     /*=============================================m_ÔÔ_m=============================================\
         Segment API
