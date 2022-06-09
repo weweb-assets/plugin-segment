@@ -30,7 +30,7 @@ export default {
     methods: {
         changeWriteKey(writeKey) {
             this.$emit('update:settings', { ...this.settings, publicData: { writeKey } });
-            this.plugin.load(writeKey);
+            this.plugin.loadAnalytics(writeKey);
         },
     },
 };
