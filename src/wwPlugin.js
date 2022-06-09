@@ -12,8 +12,8 @@ import './components/Alias.vue';
 
 export default {
     analytics: null,
-    async onLoad() {
-        await this.load();
+    async onLoad(settings) {
+        await this.load(settings.publicData.writeKey);
     },
     /*=============================================m_ÔÔ_m=============================================\
         Segment API
