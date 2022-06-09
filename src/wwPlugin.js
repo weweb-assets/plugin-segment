@@ -19,8 +19,7 @@ export default {
         Segment API
     \================================================================================================*/
     async loadAnalytics(writeKey) {
-        const analytics = await AnalyticsBrowser.load({ writeKey: writeKey || this.settings.publicData.writeKey });
-        this.analytics = analytics;
+        this.analytics = await AnalyticsBrowser.load({ writeKey });
     },
     identify({ userId, traits }) {
         /* wwEditor:start */
