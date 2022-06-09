@@ -11,7 +11,7 @@
         "serve": "weweb serve"
     },
     "dependencies": {
-        "@segment/analytics-next": "^1.32.1"
+        "@segment/analytics-next": "^1.38.0"
     },
     "devDependencies": {
         "@vue/eslint-config-prettier": "^6.0.0",
