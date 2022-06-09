@@ -12,14 +12,14 @@ import './components/Alias.vue';
 
 export default {
     analytics: null,
-    async onLoad(settings) {
-        await this.loadAnalytics(settings.publicData.writeKey);
+    onLoad(settings) {
+        this.loadAnalytics(settings.publicData.writeKey);
     },
     /*=============================================m_ÔÔ_m=============================================\
         Segment API
     \================================================================================================*/
-    async loadAnalytics(writeKey) {
-        this.analytics = await AnalyticsBrowser.load({ writeKey });
+    loadAnalytics(writeKey) {
+        this.analytics = AnalyticsBrowser.load({ writeKey });
     },
     identify({ userId, traits }) {
         /* wwEditor:start */
