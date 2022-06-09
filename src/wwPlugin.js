@@ -13,12 +13,12 @@ import './components/Alias.vue';
 export default {
     analytics: null,
     async onLoad(settings) {
-        await this.load(settings.publicData.writeKey);
+        await this.loadAnalytics(settings.publicData.writeKey);
     },
     /*=============================================m_ÔÔ_m=============================================\
         Segment API
     \================================================================================================*/
-    async load(writeKey) {
+    async loadAnalytics(writeKey) {
         const analytics = await AnalyticsBrowser.load({ writeKey: writeKey || this.settings.publicData.writeKey });
         this.analytics = analytics;
     },
