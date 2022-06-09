@@ -19,7 +19,7 @@ export default {
         Segment API
     \================================================================================================*/
     async load(writeKey) {
-        const [analytics] = await AnalyticsBrowser.load({ writeKey: writeKey || this.settings.publicData.writeKey });
+        const analytics = await AnalyticsBrowser.load({ writeKey: writeKey || this.settings.publicData.writeKey });
         this.analytics = analytics;
     },
     identify({ userId, traits }) {
