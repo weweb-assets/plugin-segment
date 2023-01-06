@@ -22,20 +22,20 @@ export default {
     loadAnalytics(writeKey) {
         this.analytics = AnalyticsBrowser.load({ writeKey });
     },
-    identify({ userId, traits }) {
+    identify({ userId, traits = {} }) {
         /* wwEditor:start */
         if (!this.analytics) throw new Error('Invalid Segment write key.');
-        /* wwEditor:start */
+        /* wwEditor:end */
         if (!this.analytics) return;
         traits = Array.isArray(traits)
             ? traits.reduce((obj, item) => ({ ...obj, [item.key]: item.value }), {})
             : traits;
         this.analytics.identify(userId, traits);
     },
-    track({ event, properties }) {
+    track({ event, properties = {} }) {
         /* wwEditor:start */
         if (!this.analytics) throw new Error('Invalid Segment write key.');
-        /* wwEditor:start */
+        /* wwEditor:end */
         if (!this.analytics) return;
         properties = Array.isArray(properties)
             ? properties.reduce((obj, item) => ({ ...obj, [item.key]: item.value }), {})
@@ -45,7 +45,7 @@ export default {
     page({ category, name, properties }) {
         /* wwEditor:start */
         if (!this.analytics) throw new Error('Invalid Segment write key.');
-        /* wwEditor:start */
+        /* wwEditor:end */
         if (!this.analytics) return;
         properties = Array.isArray(properties)
             ? properties.reduce((obj, item) => ({ ...obj, [item.key]: item.value }), {})
@@ -55,7 +55,7 @@ export default {
     screen({ name, properties }) {
         /* wwEditor:start */
         if (!this.analytics) throw new Error('Invalid Segment write key.');
-        /* wwEditor:start */
+        /* wwEditor:end */
         if (!this.analytics) return;
         properties = Array.isArray(properties)
             ? properties.reduce((obj, item) => ({ ...obj, [item.key]: item.value }), {})
@@ -65,7 +65,7 @@ export default {
     group({ groupId, traits }) {
         /* wwEditor:start */
         if (!this.analytics) throw new Error('Invalid Segment write key.');
-        /* wwEditor:start */
+        /* wwEditor:end */
         if (!this.analytics) return;
         traits = Array.isArray(traits)
             ? traits.reduce((obj, item) => ({ ...obj, [item.key]: item.value }), {})
@@ -75,7 +75,7 @@ export default {
     alias({ previousId, userId }) {
         /* wwEditor:start */
         if (!this.analytics) throw new Error('Invalid Segment write key.');
-        /* wwEditor:start */
+        /* wwEditor:end */
         if (!this.analytics) return;
         this.analytics.alias(previousId, userId);
     },
