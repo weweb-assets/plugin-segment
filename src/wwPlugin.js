@@ -40,8 +40,6 @@ export default {
                 },
             }
         );
-
-        console.log('Segment Analytics loaded', writeKey, proxyUrl, apiProxyUrl);
     },
     identify({ userId, traits = {} }) {
         /* wwEditor:start */
