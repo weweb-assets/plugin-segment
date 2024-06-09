@@ -52,7 +52,6 @@ export default {
     watch: {
         settings: {
             handler({ publicData }) {
-                console.log('settings changed', publicData);
                 this.plugin.loadAnalytics(
                     {
                         writeKey: publicData.writeKey,
