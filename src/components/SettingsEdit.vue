@@ -72,13 +72,16 @@ export default {
     },
     methods: {
         changeWriteKey(writeKey) {
-            this.$emit('update:settings', { ...this.settings, publicData: { writeKey } });
+            this.$emit('update:settings', { ...this.settings, publicData: { ...this.settings.publicData, writeKey } });
         },
         changeProxyUrl(proxyUrl) {
-            this.$emit('update:settings', { ...this.settings, publicData: { proxyUrl } });
+            this.$emit('update:settings', { ...this.settings, publicData: { ...this.settings.publicData, proxyUrl } });
         },
         changeApiProxyUrl(apiProxyUrl) {
-            this.$emit('update:settings', { ...this.settings, publicData: { apiProxyUrl } });
+            this.$emit('update:settings', {
+                ...this.settings,
+                publicData: { ...this.settings.publicData, apiProxyUrl },
+            });
         },
     },
 };
