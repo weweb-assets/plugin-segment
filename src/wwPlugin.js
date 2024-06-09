@@ -31,22 +31,17 @@ export default {
     /*=============================================m_ÔÔ_m=============================================\
         Segment API
     \================================================================================================*/
-    loadAnalytics(config, { integrations }) {
-        console.log('loadAnalytics', config.writeKey, config.cdnUrl, integrations.apiHost);
-
+    loadAnalytics(writeKey, proxyUrl, apiProxyUrl) {
         this.analytics = AnalyticsBrowser.load(
-            {
-                writeKey: config.writeKey,
-                cdnUrl: config.cdnUrl,
-            },
+            { writeKey, cdnUrl: proxyUrl },
             {
                 integrations: {
-                    'Segment.io': {
-                        apiHost: integrations.apiHost,
-                    },
+                    'Segment.io': { apiHost: apiProxyUrl },
                 },
             }
         );
+
+        console.log('Segment Analytics loaded', writeKey, proxyUrl, apiProxyUrl);
     },
     identify({ userId, traits = {} }) {
         /* wwEditor:start */

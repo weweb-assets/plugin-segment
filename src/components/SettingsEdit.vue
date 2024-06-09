@@ -52,19 +52,7 @@ export default {
     watch: {
         settings: {
             handler({ publicData }) {
-                this.plugin.loadAnalytics(
-                    {
-                        writeKey: publicData.writeKey,
-                        cdnUrl: publicData.proxyUrl,
-                    },
-                    {
-                        integrations: {
-                            'Segment.io': {
-                                apiHost: publicData.apiProxyUrl,
-                            },
-                        },
-                    }
-                );
+                this.plugin.loadAnalytics(publicData.writeKey, publicData.proxyUrl, publicData.apiProxyUrl);
             },
             deep: true,
         },
