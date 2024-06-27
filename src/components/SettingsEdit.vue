@@ -24,7 +24,7 @@
             <wwEditorInputText
                 type="text"
                 name="proxy-url"
-                placeholder="Enter CDN Proxy URL"
+                placeholder="https://MY-CUSTOM-CDN-PROXY.com"
                 :model-value="settings.publicData.proxyUrl"
                 large
                 @update:modelValue="changeProxyUrl"
@@ -34,7 +34,7 @@
             <wwEditorInputText
                 type="text"
                 name="api-proxy-url"
-                placeholder="Enter API Proxy URL"
+                placeholder="MY-CUSTOM-API-PROXY.com/v1"
                 :model-value="settings.publicData.apiProxyUrl"
                 large
                 @update:modelValue="changeApiProxyUrl"
