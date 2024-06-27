@@ -13,14 +13,33 @@ import './components/Alias.vue';
 export default {
     analytics: null,
     onLoad(settings) {
-        const analytics = AnalyticsBrowser.load({ writeKey: settings.publicData.writeKey });
+        const analytics = AnalyticsBrowser.load(
+            {
+                writeKey: settings.publicData.writeKey,
+                cdnUrl: settings.publicData.proxyUrl,
+            },
+            {
+                integrations: {
+                    'Segment.io': {
+                        apiHost: settings.publicData.apiProxyUrl,
+                    },
+                },
+            }
+        );
         this.analytics = [analytics].flat().find(item => item.identify);
     },
     /*=============================================m_ÔÔ_m=============================================\
         Segment API
     \================================================================================================*/
-    loadAnalytics(writeKey) {
-        this.analytics = AnalyticsBrowser.load({ writeKey });
+    loadAnalytics(writeKey, proxyUrl, apiProxyUrl) {
+        this.analytics = AnalyticsBrowser.load(
+            { writeKey, cdnUrl: proxyUrl },
+            {
+                integrations: {
+                    'Segment.io': { apiHost: apiProxyUrl },
+                },
+            }
+        );
     },
     identify({ userId, traits = {} }) {
         /* wwEditor:start */
