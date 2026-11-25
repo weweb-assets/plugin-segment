@@ -1,0 +1,273 @@
+{
+    "schemaVersion": 1,
+    "settings": {
+        "fields": [
+            {
+                "key": "writeKey",
+                "label": "Write key",
+                "type": "text",
+                "storage": "publicData",
+                "placeholder": "Enter the API key",
+                "required": true
+            },
+            {
+                "key": "proxyUrl",
+                "label": "Custom CDN Proxy URL",
+                "type": "text",
+                "storage": "publicData",
+                "placeholder": "https://MY-CUSTOM-CDN-PROXY.com"
+            },
+            {
+                "key": "apiProxyUrl",
+                "label": "Custom API Proxy URL",
+                "type": "text",
+                "storage": "publicData",
+                "placeholder": "MY-CUSTOM-API-PROXY.com/v1"
+            }
+        ],
+        "summary": [
+            {
+                "field": "writeKey"
+            }
+        ]
+    },
+    "actions": [
+        {
+            "name": "Identify",
+            "code": "identify",
+            "form": {
+                "fields": [
+                    {
+                        "key": "userId",
+                        "label": "User ID",
+                        "type": "text",
+                        "bindable": true,
+                        "required": true,
+                        "placeholder": "Enter a value"
+                    },
+                    {
+                        "key": "traits",
+                        "label": "Traits",
+                        "type": "list",
+                        "bindable": true,
+                        "item": {
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "key": "key",
+                                    "label": "Key",
+                                    "type": "text",
+                                    "bindable": true,
+                                    "placeholder": "Enter a value"
+                                },
+                                {
+                                    "key": "value",
+                                    "label": "Value",
+                                    "type": "text",
+                                    "bindable": true,
+                                    "placeholder": "Enter a value"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Track",
+            "code": "track",
+            "form": {
+                "fields": [
+                    {
+                        "key": "event",
+                        "label": "Event",
+                        "type": "text",
+                        "bindable": true,
+                        "required": true,
+                        "placeholder": "Enter a value"
+                    },
+                    {
+                        "key": "properties",
+                        "label": "Properties",
+                        "type": "list",
+                        "bindable": true,
+                        "item": {
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "key": "key",
+                                    "label": "Key",
+                                    "type": "text",
+                                    "bindable": true,
+                                    "placeholder": "Enter a value"
+                                },
+                                {
+                                    "key": "value",
+                                    "label": "Value",
+                                    "type": "text",
+                                    "bindable": true,
+                                    "placeholder": "Enter a value"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "validation": "requiredFields"
+        },
+        {
+            "name": "Page",
+            "code": "page",
+            "form": {
+                "fields": [
+                    {
+                        "key": "category",
+                        "label": "Category",
+                        "type": "text",
+                        "bindable": true,
+                        "placeholder": "Enter a value"
+                    },
+                    {
+                        "key": "name",
+                        "label": "Name",
+                        "type": "text",
+                        "bindable": true,
+                        "placeholder": "Enter a name"
+                    },
+                    {
+                        "key": "properties",
+                        "label": "Properties",
+                        "type": "list",
+                        "bindable": true,
+                        "item": {
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "key": "key",
+                                    "label": "Key",
+                                    "type": "text",
+                                    "bindable": true,
+                                    "placeholder": "Enter a value"
+                                },
+                                {
+                                    "key": "value",
+                                    "label": "Value",
+                                    "type": "text",
+                                    "bindable": true,
+                                    "placeholder": "Enter a value"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Screen",
+            "code": "screen",
+            "form": {
+                "fields": [
+                    {
+                        "key": "name",
+                        "label": "Name",
+                        "type": "text",
+                        "bindable": true,
+                        "required": true,
+                        "placeholder": "Enter a name"
+                    },
+                    {
+                        "key": "properties",
+                        "label": "Properties",
+                        "type": "list",
+                        "bindable": true,
+                        "item": {
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "key": "key",
+                                    "label": "Key",
+                                    "type": "text",
+                                    "bindable": true,
+                                    "placeholder": "Enter a value"
+                                },
+                                {
+                                    "key": "value",
+                                    "label": "Value",
+                                    "type": "text",
+                                    "bindable": true,
+                                    "placeholder": "Enter a value"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Group",
+            "code": "group",
+            "form": {
+                "fields": [
+                    {
+                        "key": "groupId",
+                        "label": "Group ID",
+                        "type": "text",
+                        "bindable": true,
+                        "required": true,
+                        "placeholder": "Enter a value"
+                    },
+                    {
+                        "key": "traits",
+                        "label": "Traits",
+                        "type": "list",
+                        "bindable": true,
+                        "item": {
+                            "type": "record",
+                            "fields": [
+                                {
+                                    "key": "key",
+                                    "label": "Key",
+                                    "type": "text",
+                                    "bindable": true,
+                                    "placeholder": "Enter a value"
+                                },
+                                {
+                                    "key": "value",
+                                    "label": "Value",
+                                    "type": "text",
+                                    "bindable": true,
+                                    "placeholder": "Enter a value"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "validation": "requiredFields"
+        },
+        {
+            "name": "Alias",
+            "code": "alias",
+            "form": {
+                "fields": [
+                    {
+                        "key": "previousId",
+                        "label": "Previous ID",
+                        "type": "text",
+                        "bindable": true,
+                        "required": true,
+                        "placeholder": "Enter a value"
+                    },
+                    {
+                        "key": "userId",
+                        "label": "User ID",
+                        "type": "text",
+                        "bindable": true,
+                        "placeholder": "Enter a value"
+                    }
+                ]
+            },
+            "validation": "requiredFields"
+        }
+    ]
+}

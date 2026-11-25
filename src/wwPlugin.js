@@ -12,6 +12,11 @@ import './components/Alias.vue';
 
 export default {
     analytics: null,
+    /* wwEditor:start */
+    onPreviewSettingsChanged({ writeKey, proxyUrl, apiProxyUrl }) {
+        this.loadAnalytics(writeKey, proxyUrl, apiProxyUrl);
+    },
+    /* wwEditor:end */
     onLoad(settings) {
         const analytics = AnalyticsBrowser.load(
             {
