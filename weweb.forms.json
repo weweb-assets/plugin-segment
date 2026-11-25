@@ -8,7 +8,14 @@
                 "type": "text",
                 "storage": "publicData",
                 "placeholder": "Enter the API key",
-                "required": true
+                "required": true,
+                "help": {
+                    "text": "Find your write key in Segment.",
+                    "link": {
+                        "label": "Find it here",
+                        "url": "https://segment.com/docs/connections/find-writekey"
+                    }
+                }
             },
             {
                 "key": "proxyUrl",
